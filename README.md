@@ -7,9 +7,17 @@
 ## 다운로드
 
 - [최신 버전 다운로드](https://github.com/deoksangcho/edufine-approval-widget-releases/releases/latest)
-- [v0.8.7 Windows 설치 ZIP](https://github.com/deoksangcho/edufine-approval-widget-releases/releases/download/v0.8.7/edufine-approval-widget-v0.8.7.zip)
+- [v0.8.8 Windows 설치 ZIP](https://github.com/deoksangcho/edufine-approval-widget-releases/releases/download/v0.8.8/edufine-approval-widget-v0.8.8.zip)
+- [노션 사용설명서](https://dscho.notion.site/edu-approval)
 
-릴리스의 Assets에서 **edufine-approval-widget-v0.8.7.zip**을 선택합니다. `Source code (zip)`에는 설치 프로그램이 없습니다.
+릴리스의 Assets에서 **edufine-approval-widget-v0.8.8.zip**을 선택합니다. `Source code (zip)`에는 설치 프로그램이 없습니다.
+
+## 0.8.8 변경 사항
+
+- 이전 종료 기록 때문에 재설치·연결 도움으로 다시 연 위젯에 자동 연결되지 않던 문제를 수정했습니다.
+- 연결이 확인되면 업무포털 로그인 전에도 설치 안내창에서 위젯 설정창으로 자동 전환됩니다.
+- 자동 시작이 켜져 있으면 이미 다시 연 위젯을 찾아 연결합니다. 사용자가 종료한 위젯을 연결 확인만으로 새로 실행하지 않으며, 자동 시작 꺼짐 설정도 유지합니다.
+- Windows 글자 크기에 따라 설정창의 두 줄 안내가 잘릴 수 있는 문제를 수정했습니다.
 
 ## 설치
 
@@ -17,13 +25,18 @@
 2. 안내창에서 업무용 Chrome 또는 Edge를 선택합니다.
 3. 안내에 따라 확장 관리 화면에서 **개발자 모드 → 압축해제된 확장 프로그램 로드**를 선택합니다.
 4. 안내창에서 복사한 설치 폴더를 불러옵니다.
-5. 업무포털에 로그인합니다. 연결되면 위젯에 건수가 표시됩니다.
+5. 연결되면 설치 안내창이 자동으로 닫히고 위젯 설정창이 열립니다. 이 단계에는 업무포털 로그인이 필요하지 않습니다.
+6. 설정을 확인한 뒤 같은 브라우저·프로필에서 업무포털에 로그인합니다. 조회가 성공하면 위젯에 건수가 표시됩니다.
 
-기존 사용자는 설치 후 확장 관리 화면에서 위젯의 새로고침 버튼을 한 번 누릅니다. 상세 안내는 ZIP 안의 `사용방법.md`에 있습니다. 관리되는 학교 PC의 확장 설치 제한은 해당 기관의 정책을 따릅니다.
+기존 사용자는 **새 ZIP으로 Windows 위젯을 설치한 뒤, 사용하는 브라우저마다 확장 카드의 새로고침(↻)을 한 번 눌러 확장도 0.8.8로 갱신**합니다. 브라우저 자동 시작이 켜져 있으면 별도의 ‘위젯 열기’ 없이 자동 연결됩니다. 자동 시작을 꺼 둔 경우에는 기존처럼 수동으로 열 수 있습니다.
+
+종료 후 연결 도움으로 위젯만 다시 열었다면 자동 확인 주기 때문에 약 1분, 절전·브라우저 상태에 따라 더 기다릴 수 있습니다. 확장 등록·새로고침 또는 로그인 감지 시에는 바로 연결을 시도합니다. 상세 안내는 노션과 ZIP 안의 `사용방법.md`에 있습니다. 관리되는 학교 PC의 확장 설치 제한은 해당 기관의 정책을 따릅니다.
 
 ## 이전에 바이러스 감지로 다운로드가 차단된 경우
 
 2026-09-15 Microsoft Defender 보안 인텔리전스를 **1.459.211.0**으로 업데이트한 뒤 v0.8.7 원본 ZIP을 재검사하여 탐지 0건을 확인했습니다. 파일의 내용은 기존 노션 배포본과 같습니다.
+
+같은 날 **v0.8.8 최종 설치 ZIP도 Microsoft Defender 검사에서 탐지 0건**을 확인했습니다. 보안 예외 등록이나 실시간 보호 해제는 하지 않았습니다.
 
 **Windows 보안 → 바이러스 및 위협 방지 → 바이러스 및 위협 방지 업데이트(보호 업데이트) → 업데이트 확인** 후 다시 다운로드해 주세요.
 
@@ -31,16 +44,16 @@
 
 ## 파일 동일성 확인
 
-v0.8.7 ZIP SHA-256:
+v0.8.8 ZIP SHA-256 (264,992바이트):
 
 ```text
-0B6062B3D71ECFEB3D262C1B5816A6F56218CE0DA84CE3CF940294C379BD9A3B
+53EFA12638F3E2D41322C94515390BF7A675AA806280E2EFCBB34A56F2BA2462
 ```
 
 다운로드 파일의 값은 PowerShell에서 확인할 수 있습니다.
 
 ```powershell
-Get-FileHash -LiteralPath '.\edufine-approval-widget-v0.8.7.zip' -Algorithm SHA256
+Get-FileHash -LiteralPath '.\edufine-approval-widget-v0.8.8.zip' -Algorithm SHA256
 ```
 
 해시값이 같으면 배포 원본과 동일한 파일입니다. 개인정보가 포함된 화면이나 업무자료 대신 파일 버전과 오류 문구로 문의해 주세요.
